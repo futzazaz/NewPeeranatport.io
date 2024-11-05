@@ -1,0 +1,158 @@
+/* กำหนดสไตล์พื้นฐานของ body เพื่อจัดการการแสดงผลและพื้นหลัง */
+body {
+  display: flex;
+  flex-direction: column; /* จัดเรียงองค์ประกอบในแนวตั้ง */
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* ฟอนต์สไตล์โมเดิร์น */
+  background-color: #AC351F; /* สีพื้นหลังอ่อนๆ ที่สบายตา */
+  color: #333; /* สีข้อความหลัก */
+  box-sizing: border-box; /* จัดการขนาดของกล่องให้สมดุล */
+}
+
+/* สไตล์ของ Header */
+header {
+  text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+  padding: 20px;
+}
+
+.title {
+  font-size: 2.5em; /* ขนาดใหญ่เพื่อเน้นหัวข้อ */
+  color: #007bff; /* สีฟ้าเพื่อดึงดูดความสนใจ */
+  font-weight: bold;
+}
+
+/* สไตล์ของแถบนำทาง (Navbar) */
+nav {
+  background-color: #333; /* สีพื้นหลังเข้มของ Navbar */
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้ดูมีมิติ */
+  position: sticky; /* ให้ Navbar คงที่เมื่อเลื่อนหน้า */
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left h1 {
+  margin: 0;
+  color: #fff;
+}
+
+.navbar-right a {
+  text-decoration: none;
+  background-color: #ff6f61; /* สีปุ่มเพื่อดึงดูดความสนใจ */
+  color: #fff;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: all 0.3s ease; /* การเปลี่ยนแปลงนุ่มนวล */
+}
+
+.navbar-right a:hover {
+  background-color: #ff8a73; /* สีเมื่อโฮเวอร์ */
+  transform: scale(1.1); /* ขยายเล็กน้อยเมื่อโฮเวอร์ */
+}
+
+/* การจัดวางส่วนของ Section */
+section {
+  text-align: center; /* จัดข้อความกึ่งกลาง */
+  padding: 40px;
+  width: 90%;
+  max-width: 800px;
+  margin-top: 20px;
+  background: #ffffff; /* พื้นหลังสีขาวเพื่อให้เนื้อหาโดดเด่น */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* เงาอ่อนๆ สำหรับมิติ */
+}
+
+/* สไตล์ของการ์ด (Card) */
+.card {
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* เพิ่มเอฟเฟกต์โฮเวอร์ */
+  margin: 20px auto;
+}
+
+.card:hover {
+  transform: scale(1.05); /* ขยายการ์ดเมื่อโฮเวอร์ */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* เงาชัดขึ้น */
+  cursor: pointer;
+}
+
+.card_header {
+  background-color: #007bff; /* สีพื้นหลังของหัวข้อการ์ด */
+  color: #fff;
+  padding: 10px;
+  border-radius: 12px 12px 0 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#dev, #song {
+  text-decoration: none;
+  color: #007bff; /* สีฟ้าสำหรับลิงก์ */
+  font-weight: bold;
+}
+
+#song:hover {
+  color: #0056b3; /* สีเข้มขึ้นเมื่อโฮเวอร์ */
+  text-decoration: underline;
+}
+
+h2 {
+  margin: 10px 0;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 10px; /* มุมโค้งของรูปภาพ */
+  transition: transform 0.3s ease;
+  margin-top: 20px;
+}
+
+img:hover {
+  transform: scale(1.05); /* ขยายรูปภาพเล็กน้อยเมื่อโฮเวอร์ */
+}
+
+/* สไตล์ของ Footer */
+footer {
+  background-color: #333; /* สีพื้นหลังเข้มของ Footer */
+  padding: 40px 500px;
+  text-align: center;
+  color: #fff; /* สีข้อความขาว */
+  font-size: 0.9em;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* สไตล์ของชื่อหัวข้อในแต่ละส่วน */
+h2, h3, h4 {
+  color: #007bff; /* สีฟ้าสำหรับหัวข้อ */
+}
+
+/* การตอบสนองบนหน้าจอขนาดเล็ก (Responsive) */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column; /* จัดเรียง Navbar ในแนวตั้งเมื่อหน้าจอเล็ก */
+  }
+
+  .navbar-right a {
+    padding: 8px 12px;
+    margin: 5px 0;
+  }
+
+  section {
+    padding: 20px;
+  }
+}
