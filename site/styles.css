@@ -7,7 +7,7 @@ body {
   margin: 0;
   font-family: 'Helvetica Neue', Arial, sans-serif; /* ฟอนต์สไตล์โมเดิร์น */
   background-color: #AC351F; /* สีพื้นหลังอ่อนๆ ที่สบายตา */
-  color: #333; /* สีข้อความหลัก */
+  color: #fdf4e5; /* สีข้อความหลัก */
   box-sizing: border-box; /* จัดการขนาดของกล่องให้สมดุล */
 }
 
@@ -99,7 +99,7 @@ section {
 
 #dev, #song {
   text-decoration: none;
-  color: #007bff; /* สีฟ้าสำหรับลิงก์ */
+  color: #ff914d; /* สีฟ้าสำหรับลิงก์ */
   font-weight: bold;
 }
 
@@ -126,7 +126,7 @@ img:hover {
 /* สไตล์ของ Footer */
 footer {
   background-color: #333; /* สีพื้นหลังเข้มของ Footer */
-  padding: 40px 500px;
+  padding: 30px 800px;
   text-align: center;
   color: #fff; /* สีข้อความขาว */
   font-size: 0.9em;
@@ -138,7 +138,7 @@ footer p {
 
 /* สไตล์ของชื่อหัวข้อในแต่ละส่วน */
 h2, h3, h4 {
-  color: #007bff; /* สีฟ้าสำหรับหัวข้อ */
+  color: #2b74f1; /* สีฟ้าสำหรับหัวข้อ */
 }
 
 /* การตอบสนองบนหน้าจอขนาดเล็ก (Responsive) */
