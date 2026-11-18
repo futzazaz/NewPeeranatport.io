@@ -7,7 +7,7 @@ body {
   margin: 0;
   font-family: 'Helvetica Neue', Arial, sans-serif; /* ฟอนต์สไตล์โมเดิร์น */
   background-color: #AC351F; /* สีพื้นหลังอ่อนๆ ที่สบายตา */
-  color: #fdf4e5; /* สีข้อความหลัก */
+  color: #3b3b3b; /* สีข้อความหลัก */
   box-sizing: border-box; /* จัดการขนาดของกล่องให้สมดุล */
 }
 
@@ -64,7 +64,7 @@ section {
   width: 90%;
   max-width: 800px;
   margin-top: 20px;
-  background: #ffffff; /* พื้นหลังสีขาวเพื่อให้เนื้อหาโดดเด่น */
+  background: #333; /* พื้นหลังสีขาวเพื่อให้เนื้อหาโดดเด่น */
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* เงาอ่อนๆ สำหรับมิติ */
 }
