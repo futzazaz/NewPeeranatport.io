@@ -1,61 +1,36 @@
-// Get the button and content elements
-const rick = document.getElementById("fev");
+const typewriterEl = document.getElementById("typewriter");
+const fullName = "Peeranat Seeprasert";
 
-// Function to simulate typing effect
-function typeWriter(element, text, index, speed) {
-  if (index < text.length) {
-      element.innerHTML += text.charAt(index);
-      index++;
-      setTimeout(() => typeWriter(element, text, index, speed), speed);
+function typeWriter(element, text, index = 0, speed = 60) {
+  if (element && index < text.length) {
+    element.textContent += text.charAt(index);
+    setTimeout(() => typeWriter(element, text, index + 1, speed), speed);
   }
 }
 
-// Typing effect on rackroll_ text
-const rickrolling = "Peeranat Seeparsert";
-typeWriter(rick, rickrolling, 0, 50);
+typeWriter(typewriterEl, fullName);
 
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('nav a');
+// Highlight active navigation link on scroll
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a");
 
-function setActiveLink() {
-  const scrollY = window.scrollY;
-  sections.forEach((section, index) => {
-    const sectionTop = section.offsetTop - 100;
-    const sectionBottom = sectionTop + section.offsetHeight;
-    if (scrollY >= sectionTop && scrollY < sectionBottom) {
-      navLinks.forEach((link) => link.classList.remove('active'));
-      navLinks.forEach((link) => link.classList.add('inactive'));
-      navLinks[index].classList.add('active');
-      navLinks[index].classList.remove('inactive');
+function updateActiveNav() {
+  const scrollPosition = window.scrollY + 140;
+
+  sections.forEach((section) => {
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    const id = section.getAttribute("id");
+
+    if (scrollPosition >= top && scrollPosition < top + height) {
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${id}`) {
+          link.classList.add("active");
+        }
+      });
     }
   });
 }
 
-function stickyNav() {
-  const nav = document.querySelector('nav');
-  const headerHeight = document.querySelector('header').offsetHeight;
-  if (window.scrollY >= headerHeight) {
-    nav.classList.add('sticky');
-  } else {
-    nav.classList.remove('sticky');
-  }
-}
-
-//Smooth Scroll
-
-function smoothScroll(event) {
-  event.preventDefault();
-  const targetId = event.target.getAttribute('href');
-  const targetSection = document.querySelector(targetId);
-  targetSection.scrollIntoView({ behavior: 'smooth' });
-}
-
-navLinks.forEach(link => {
-  link.addEventListener('click', smoothScroll);
-});
-
-
-window.addEventListener('scroll', () => {
-  setActiveLink();
-  stickyNav();
-});
+window.addEventListener("scroll", updateActiveNav);
